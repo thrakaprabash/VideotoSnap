@@ -1,6 +1,6 @@
 # Video to Snap
 
-![Video to Snap Header](https://via.placeholder.com/1200x400/0f172a/3b82f6?text=Video+to+Snap)
+![Video to Snap Header](./header.png)
 
 **Video to Snap** is a powerful, modern web application that allows you to easily extract evenly-spaced, high-quality snapshot frames from your video files. Built with a sleek dark-mode glassmorphism aesthetic, it acts as a comprehensive curation tool rather than just a simple extraction script.
 
