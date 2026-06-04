@@ -39,6 +39,33 @@
                     </select>
                 </div>
 
+                <div class="advanced-settings-toggle">
+                    <span id="toggle-advanced">Advanced Settings ▾</span>
+                </div>
+                
+                <div id="advanced-settings" class="hidden">
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="start-sec">Start Time (sec)</label>
+                            <input type="number" id="start-sec" name="start_sec" min="0" step="0.1" placeholder="0">
+                        </div>
+                        <div class="input-group">
+                            <label for="end-sec">End Time (sec)</label>
+                            <input type="number" id="end-sec" name="end_sec" min="0" step="0.1" placeholder="End">
+                        </div>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="quality">Image Quality (<span id="quality-val">95</span>%)</label>
+                        <input type="range" id="quality" name="quality" min="1" max="100" value="95">
+                    </div>
+                    
+                    <div class="input-group checkbox-group">
+                        <input type="checkbox" id="add-watermark" name="add_watermark" value="true">
+                        <label for="add-watermark">Add Timestamp Watermark</label>
+                    </div>
+                </div>
+
                 <button type="submit" id="generate-btn">
                     <span>Generate Snapshots</span>
                 </button>
@@ -46,10 +73,29 @@
 
             <div id="loading-state" class="hidden">
                 <div class="spinner"></div>
-                <p>Processing your video... This might take a moment.</p>
+                <p id="loading-text">Uploading your video...</p>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
             </div>
             
             <div id="error-message" class="hidden"></div>
+
+            <div id="preview-section" class="hidden">
+                <div class="preview-header">
+                    <h2>Generated Snapshots</h2>
+                    <p>Review your frames. Delete any you don't want to keep.</p>
+                </div>
+                
+                <div id="preview-grid" class="preview-grid">
+                    <!-- Images will be injected here by JS -->
+                </div>
+
+                <div class="preview-actions">
+                    <button id="download-all-btn" class="primary-btn">Download All (.zip)</button>
+                    <button id="start-over-btn" class="secondary-btn">Start Over</button>
+                </div>
+            </div>
         </main>
     </div>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
