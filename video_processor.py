@@ -67,7 +67,7 @@ def extract_snapshots(video_path, num_snaps, output_dir=None,
 
     extracted_count = 0
     img_format = img_format.lower().replace('.', '')
-    if img_format not in ['jpg', 'jpeg', 'png']:
+    if img_format not in ['jpg', 'jpeg', 'png', 'webp']:
         img_format = 'jpg'
 
     for idx, frame_idx in enumerate(frame_indices):
@@ -107,6 +107,8 @@ def extract_snapshots(video_path, num_snaps, output_dir=None,
             # Save the frame
             if img_format in ['jpg', 'jpeg']:
                 cv2.imwrite(output_path, frame, [int(cv2.IMWRITE_JPEG_QUALITY), int(quality)])
+            elif img_format == 'webp':
+                cv2.imwrite(output_path, frame, [int(cv2.IMWRITE_WEBP_QUALITY), int(quality)])
             else:
                 # PNG compression ranges from 0-9. Map quality (0-100) to compression (9-0)
                 compression = int(9 - (quality / 100) * 9)

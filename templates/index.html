@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video to Snap Web</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video <span class="highlight">to</span> Snap</h1>
+            <p>Extract beautiful frames from your videos in seconds.</p>
+        </header>
+
+        <main>
+            <form id="upload-form">
+                <div class="dropzone" id="dropzone">
+                    <input type="file" id="video-upload" name="video" accept="video/*" required>
+                    <div class="dropzone-content">
+                        <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+                        <p>Drag & Drop your video here</p>
+                        <span>or click to browse</span>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label for="num-snaps">Number of Snapshots</label>
+                    <input type="number" id="num-snaps" name="num_snaps" min="1" max="1000" value="20" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="format">Image Format</label>
+                    <select id="format" name="format">
+                        <option value="jpg">JPG</option>
+                        <option value="png">PNG</option>
+                        <option value="webp">WebP</option>
+                    </select>
+                </div>
+
+                <button type="submit" id="generate-btn">
+                    <span>Generate Snapshots</span>
+                </button>
+            </form>
+
+            <div id="loading-state" class="hidden">
+                <div class="spinner"></div>
+                <p>Processing your video... This might take a moment.</p>
+            </div>
+            
+            <div id="error-message" class="hidden"></div>
+        </main>
+    </div>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
