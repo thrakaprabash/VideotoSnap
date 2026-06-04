@@ -4,6 +4,16 @@
 
 **Video to Snap** is a powerful, modern web application that allows you to easily extract evenly-spaced, high-quality snapshot frames from your video files. Built with a sleek dark-mode glassmorphism aesthetic, it acts as a comprehensive curation tool rather than just a simple extraction script.
 
+## 📸 Screenshots
+
+<p align="center">
+  <img src="./screenshots/1.png" width="48%" />
+  <img src="./screenshots/2.png" width="48%" />
+  <br>
+  <img src="./screenshots/3.png" width="48%" />
+  <img src="./screenshots/4.png" width="48%" />
+</p>
+
 ## ✨ Key Features
 
 *   **Beautiful UI/UX:** A stunning glassmorphism interface with drag-and-drop file upload support.
